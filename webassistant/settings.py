@@ -10,6 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
+
+# reading .env file
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
+
+# Raises django's ImproperlyConfigured exception if API_KEY not in os.environ
+OPEN_API_KEY = env('OPENAI_API_KEY')
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +37,10 @@ SECRET_KEY = 'django-insecure-(eur#_s^)g8*s=!e7t5$1d#(s3qed5t#9gmgvty($yx4i(58ea
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'    
+]
 
 
 # Application definition
@@ -37,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Add the assistant app to the list of installed apps
     'assistant',
 ]
 
@@ -55,7 +71,8 @@ ROOT_URLCONF = 'webassistant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Add the path to the templates directory
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
