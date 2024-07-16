@@ -3,7 +3,7 @@
 ## Demonstration
 This Django application is based on a excellent blog published by Jonathan Okah on [finxter](https://blog.finxter.com/how-i-built-an-openai-powered-web-assistant-with-django/)
 
-![1-Login](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/master/images/2024-07-16_002726.png "Sample Chat")
+![Sample Chat](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_002726.png "Sample Chat")
 
 During the process of re-creating the app, I've had to make some modifications so that it would continue to work with OpenAI.
 
