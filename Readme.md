@@ -34,4 +34,8 @@ The error message was also updated to show the OpenAI error code whish is render
 
 ```
 
-![Sample Error](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_011015.png "Sample Error")
+![Sample Network Error](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_011526.png "Sample Network Error")
+Image showing a Sample Network Error
+
+![Sample Key Error](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_011015.png "Sample Key Error")
+Image showing a sample Network Error
