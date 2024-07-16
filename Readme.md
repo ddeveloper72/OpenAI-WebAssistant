@@ -33,3 +33,5 @@ The error message was also updated to show the OpenAI error code whish is render
                 'error_message': error_message})
 
 ```
+
+![Sample Error](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_011015.png "Sample Error")
