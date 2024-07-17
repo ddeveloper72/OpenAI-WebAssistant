@@ -5,7 +5,32 @@ This Django application is based on a excellent blog published by Jonathan Okah 
 
 ![Sample Chat](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_002726.png "Sample Chat")
 
+### Setting up the OpenAI API_key in .env secrets
+
+At the time of writing this document, I has to create an OpenAI project API_Key.  I also needed to setup a pay-as-you-go billing plan (since I'd run out of free credits as a new user) which provides me with credits till they are used up.  I was able to top-up by $5 and leave the auto-topup turned off. This should be plenty for anyone wanting to experiment with connecting to the OpenAI API.
+
+In order to use the API_Key in Djamgo, I used Django-environ.  There is excellent information published on how to setup your `.env` file in your project environment, where the API_key can then be imported by your settings.py file.  From here the key can be made available to your component by importing it from your settings file.  Remember, that API_Keys need to be kept secret, so ensure that this .env file is added to your `.gitignore` file.  There is a very real risk of an API_key being copied from ones repository and then discovering tat your OpenAPI credits are being used up by someone else.
+
+Another reminder, is that when setting up your `.env` file, ensure that it is in the same directory as your project settings folder.
+
 During the process of re-creating the app, I've had to make some modifications so that it would continue to work with OpenAI.
+
+### Importing OpenAI API_Key to the component App
+
+Here is sample code, used in this project.  The .env file settings is made available to all components apps, using this method.
+This is a matter of preference.  Once could import the `.env` directly to the component app, rather than to the settings file.
+
+```python
+from webassistant.settings import env
+
+# Import OpenAI API_KEY from the .env file and 
+# create an instance of the OpenAI class with the API_KEY.
+
+OPENAI_API_KEY = env('OPENAI_API_KEY')
+
+client = OpenAI(api_key=OPENAI_API_KEY)
+
+```
 
 The changes made were as follows:
 - `from openai import OpenAI` referencing the [openAI docs](https://platform.openai.com/docs/quickstart)
