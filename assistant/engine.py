@@ -13,15 +13,15 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 def chatgpt(request):
     """ This function takes the user input and returns the chatbot response. """
     prompt = request.POST.get('prompt')
-    response = client.chat.completions.create(
-        model='gpt-3.5-turbo',
+    stream = client.chat.completions.create(
+        model='gpt-4o-mini',
         messages=[
             {"role": "user", "content": prompt}
         ],
         temperature=0.5,
         max_tokens=1000
     )
-    response = response.choices[0].message.content
+    response = stream.choices[0].message.content
 
     chats = {
         'prompt': prompt,
