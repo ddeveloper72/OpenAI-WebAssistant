@@ -40,8 +40,8 @@ The changes made were as follows:
 - The current OpenAI create model also requires messages as as on of the parameters:
 
 ```python
-    response = client.chat.completions.create(
-            model='gpt-3.5-turbo',
+    stream = client.chat.completions.create(
+            model='gpt-4o-mini',
             messages=[
                 {"role": "user", "content": prompt}
             ],
