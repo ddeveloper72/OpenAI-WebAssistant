@@ -27,7 +27,7 @@
 
                 <h2>Response:</h2>
                 {% autoescape off %}
-                <pre id="response">{{ response|safe }}</pre>
+                <pre id="response">{{ response|linebreaks }}</pre>
                 {% endautoescape %}
 
                 <div class="speak">
