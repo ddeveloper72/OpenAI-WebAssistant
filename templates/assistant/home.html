@@ -26,8 +26,9 @@
                 {% if response %}
 
                 <h2>Response:</h2>
-                <p id="response">{{ response | linebreaks }}</p>
-
+                {% autoescape off %}
+                <pre id="response">{{ response|safe }}</pre>
+                {% endautoescape %}
 
                 <div class="speak">
                     <input class="toggle" type="checkbox" role="switch" id="speakButton" name="toggle" value="on">
