@@ -15,6 +15,9 @@ document.getElementById('speakButton').addEventListener('change', function () {
             utterance.lang = 'en-US';
             window.speechSynthesis.speak(utterance);
             utterance.onend = function (event) {
+
+                // once utterance is completed, uncheck the speak button
+                document.getElementById('speakButton').checked = false;
                 console.log('Speech has finished after ' + event.elapsedTime + ' milliseconds.');
             };
             utterance.onerror = function (event) {
@@ -39,9 +42,4 @@ document.getElementById('speakButton').addEventListener('change', function () {
     } else {
         alertBox.style.display = 'none';
     }
-});
-
-// for accessibility only
-document.getElementById("speakButton").addEventListener("change", function () {
-    this.setAttribute("aria-checked", this.checked);
 });
