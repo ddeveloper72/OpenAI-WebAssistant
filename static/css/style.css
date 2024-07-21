@@ -1,0 +1,107 @@
+/* add background color to the body */
+body {
+  background: #575757;
+}
+
+/* add a custom alert when a response is being read */
+.alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #06501c;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* style the checkbox as a switch */
+/* styling sourced from https://codepen.io/alvarotrigo/pen/WNXLZNN */
+/* code credit is to the original author */
+/* modified to suit this application */
+.input {
+  color: #0f752e;
+}
+
+.speak {
+  display: flex;
+}
+
+.toggle {
+  color: #27961d;
+  background-color: #f7f4db;
+}
+
+.toggle:before,
+.slot,
+.slot__label {
+  display: block;
+  color: #1d5918;
+}
+.toggle:before,
+.curtain {
+  position: absolute;
+}
+.toggle:checked,
+.curtain {
+  background-color: #ffc548;
+}
+.toggle:focus {
+  outline: transparent;
+}
+.toggle {
+  border-radius: 0.75em;
+  box-shadow: 0 0 0 0.1em inset;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.25em;
+  width: 3em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle:before {
+  background: currentColor;
+  border-radius: 50%;
+  content: '';
+  top: 0.2em;
+  left: 0.2em;
+  width: 1.1em;
+  height: 1.1em;
+}
+.toggle:checked:before {
+  transform: translateX(1.5em);
+}
+.toggle:checked ~ .slot .slot__label,
+.slot__label:nth-child(2) {
+  transform: translateY(-50%) scaleY(0);
+}
+.toggle:checked ~ .slot .slot__label:nth-child(2) {
+  transform: translateY(-100%) scaleY(1);
+}
+.toggle:checked ~ .curtain {
+  transform: scaleX(1);
+}
+.slot {
+  color: transparent;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  overflow: hidden;
+  height: 1em;
+  text-indent: -0.9em;
+  -webkit-text-stroke: 0.05em #5eb556;
+}
+.slot__label {
+  flex-direction: row;
+  transform-origin: 50% 0;
+}
+.slot__label:nth-child(2) {
+  transform-origin: 50% 100%;
+}
