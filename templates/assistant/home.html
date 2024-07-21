@@ -27,8 +27,9 @@
 
                 <h2>Response:</h2>
                 <p id="response">{{ response | linebreaks }}</p>
-                <div class="speak">
 
+
+                <div class="speak">
                     <input class="toggle" type="checkbox" role="switch" id="speakButton" name="toggle" value="on">
                     <label for="toggle" class="slot">
                         <span class="slot__label">OFF
@@ -45,9 +46,11 @@
                         </span>
                     </label>
                 </div>
+                {% else %}
+                <h2>There was no response...</h2>
+                {% endif %}
 
             </div>
-            {% endif %}
         </div>
     </div>
 </div>
