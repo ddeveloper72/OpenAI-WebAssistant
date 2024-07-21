@@ -1,5 +1,6 @@
 """ engine.py is a file that contains the model function
 that takes the user input and returns the chatbot response. """
+
 from openai import OpenAI
 from webassistant.settings import env
 
@@ -19,14 +20,15 @@ def chatgpt(request):
             {"role": "user", "content": prompt}
         ],
         temperature=0.5,
-        max_tokens=1000
+        max_tokens=1000,
     )
+
     response = stream.choices[0].message.content
 
+    # Prepare the chat information to return as JSON
     chats = {
         'prompt': prompt,
-        'response': response
+        'response': response,      
     }
 
-    print(chats)
     return chats
