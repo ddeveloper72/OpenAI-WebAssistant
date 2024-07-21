@@ -1,7 +1,8 @@
 """This module contains the views for the assistant app."""
 from django.shortcuts import render
 from openai import OpenAIError
-from .engine import chatgpt
+
+from assistant.engine import chatgpt
 
 
 def home(request):
@@ -12,8 +13,8 @@ def home(request):
             chats = chatgpt(request)
             context = {
                 'prompt': chats['prompt'],
-                'response': chats['response']
-            }
+                'response': chats['response'],       
+                }
            
             return render(request, 'assistant/home.html', context)
         return render(request, 'assistant/home.html' )
