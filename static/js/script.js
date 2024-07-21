@@ -1,4 +1,4 @@
-document.getElementById('clear').addEventListener('click', function (eraseText) {
+document.getElementById('clear').addEventListener('click', function () {
     document.getElementById('prompt').value = '';
 
 });
