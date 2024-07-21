@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %} Home {% endblock %}
 {% block content %}
 <div class="row justify-content-center my-4">
@@ -6,23 +8,39 @@
         <div class="card">
             <h1 class="card-header text-center">A.I WEB ASSISTANT</h1>
             <div class="card-body">
+                <div id="customAlert" class="alert">
+                    Speaking...
+                </div>
                 <pre>Hello, how can I help you?</pre>
                 <form action="." method="POST">
                     <!-- this secures the form from malicious attacks during submission -->
                     {% csrf_token %}
-                    <input class="form-control mb-2" required type="text" autofocus="autofocus" name="prompt"
-                        value="{{ prompt }}" id="">
+                    <textarea class="form-control mb-2" required type="text" autofocus="autofocus" name="prompt"
+                        value="{{ prompt }}" id="prompt" placeholder="Type your message..."></textarea>
                     <button class="btn btn-success fw-bold" type="submit">
                         GENERATE
                     </button>
+                    <input id="clear" class="btn btn-warning fw-bold" value="CLEAR" onclick="eraseText()"
+                        type="button" />
                 </form>
                 <hr>
-                <pre>
-                {{ response | linebreaks }} 
-              </pre>
+                {% if response %}
+
+                <h2>Response:</h2>
+                <p id="response">{{ response }}</p>
+                <div class="speak">
+                    <input class="toggle" type="checkbox" role="switch" id="speakButton" name="toggle" value="on">
+                    <label for="toggle" class="slot">
+                        <span class="slot__label">OFF</span>
+                        <span class="slot__label">ON</span>
+                    </label>
+                </div>
+
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
 </div>
+
 {% endblock %}
