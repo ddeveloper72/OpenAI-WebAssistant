@@ -18,6 +18,16 @@ body {
   z-index: 1000;
 }
 
+/* Bootstrap overrides */
+pre {
+  overflow: hidden;
+}
+
+pre p {
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
 /* style the checkbox as a switch */
 /* styling sourced from https://codepen.io/alvarotrigo/pen/WNXLZNN */
 /* code credit is to the original author */
@@ -33,6 +43,7 @@ body {
 .toggle {
   color: #27961d;
   background-color: #f7f4db;
+  margin-left: auto;
 }
 
 .toggle:before,
