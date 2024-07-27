@@ -7,6 +7,7 @@
     <div class="col-md-7 mt-4">
         <div class="card">
             <h1 class="card-header text-center">A.I WEB ASSISTANT</h1>
+            <div>{{ html_content|safe }}</div>
             <div class="card-body">
                 <div id="customAlert" class="alert">
                     Speaking...
@@ -23,12 +24,16 @@
                     <input id="clear" class="btn btn-warning fw-bold" value="CLEAR" type="button" />
                 </form>
                 <hr>
-                {% if response %}
+                {% if prompt %}
+                <h2>Prompt</h2>
+                <pre><code>{{ prompt|escape }}</code></pre>
+                {% endif %}
+               
 
+                
+                {% if response %}
                 <h2>Response:</h2>
-                {% autoescape off %}
-                <pre id="response">{{ response|linebreaks }}</pre>
-                {% endautoescape %}
+                <pre id="response"><code>{{ response|escape|linebreaks }}</code></pre>
 
                 <div class="speak">
                     <P class="speak_lable">Turn the text reader on/off below</P>
@@ -44,6 +49,7 @@
                 <h3>Welcome. Lets Get Started</h3>
                 <p>First ask the AI a question, but writing it into the prompt above.</p>
                 {% endif %}
+                
 
             </div>
         </div>
