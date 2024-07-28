@@ -1,10 +1,10 @@
 # OpenAI Web Assistant Demonstration
 
-## Demonstration
+## Demonstration (🚧 under construction )
 
 This Django application is based on a excellent blog published by Jonathan Okah on [finxter](https://blog.finxter.com/how-i-built-an-openai-powered-web-assistant-with-django/)
 
-![Sample Chat](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_002726.png 'Sample Chat')
+![Sample Chat being read back](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-28_142604.png 'Sample Chat being read back')
 
 ### Setting up the OpenAI API_key in .env secrets
 
