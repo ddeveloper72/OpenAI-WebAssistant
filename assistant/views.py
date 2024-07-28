@@ -11,17 +11,18 @@ def home(request):
     try:
         # Sample Markdown text
         markdown_text = """
-        # Welcome to the Assistant App
+       # Thank you for trying the Assistant App
 
         This app allows you to interact with an AI assistant.
 
         ## Features
 
-        - Chat with the AI
+        - Chat with the AI assistant
         - Get responses to your queries
         - Enjoy a user-friendly interface
 
-        **Note:** Make sure to check the documentation for more details.
+        **Note:** Make sure to check the [OpenAI documentation](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) for more details on how to create your prompts.
+       
         """
 
         html_content = markdown2.markdown(markdown_text)
