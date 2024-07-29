@@ -69,7 +69,7 @@ Image showing a sample Key Error
 
 ### Where things change
 
-The longer I spent on working with this project, the more I've begun to enjoy it even more.  I made some changes that would then use speech synthesis to read back any text provided in the response out aloud.  I also added a toggle button to start/stop the speech synthesis as well as a custom alert to provide a visual indication (for 10s) that the text is being read out aloud.
+The longer I spent on working with this project, the more I've begun to enjoy it even more.  I made some changes that would then use speech synthesis to read back any text provided in the response out aloud.  I also added a toggle button to start/stop the speech synthesis as well as a custom alert to provide a visual indication (for 10s) that the text is being read out aloud.  The original toggle button is credited to [@alvarotrigo](https://codepen.io/alvarotrigo/pen/WNXLZNN) on codepen.  I liked the look and feel of this work.
 
 Next, I added markdown to my project which I thought might improve the look of the responses.  What I was really trying to do though, was find away by using markdown to render any code snippets, like the ones above, to look like they've been styled in my code editor.
 
