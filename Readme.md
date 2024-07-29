@@ -1,6 +1,6 @@
 # OpenAI Web Assistant Demonstration
 
-## Demonstration (🚧 under construction )
+## Introduction
 
 This Django application is based on a excellent blog published by Jonathan Okah on [finxter](https://blog.finxter.com/how-i-built-an-openai-powered-web-assistant-with-django/)
 
@@ -66,3 +66,15 @@ Image showing a Sample Network Error
 
 ![Sample Key Error](https://github.com/ddeveloper72/OpenAI-WebAssistant/blob/main/images/2024-07-16_011015.png 'Sample Key Error')
 Image showing a sample Key Error
+
+### Where things change
+
+The longer I spent on working with this project, the more I've begun to enjoy it even more.  I made some changes that would then use speech synthesis to read back any text provided in the response out aloud.  I also added a toggle button to start/stop the speech synthesis as well as a custom alert to provide a visual indication (for 10s) that the text is being read out aloud.
+
+Next, I added markdown to my project which I thought might improve the look of the responses.  What I was really trying to do though, was find away by using markdown to render any code snippets, like the ones above, to look like they've been styled in my code editor.
+
+Lastly, I added a clear button, so one can clear the prompt as well as any response that may be in the window.
+
+### Next steps
+
+I plan to reproduce this app, or similar in a new framework and stack that I've never used before,  [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) which leverages .NET and C#.  I then want to use the AI to search and work with specific datasets so that the responses will be specialized in specific subjects.
