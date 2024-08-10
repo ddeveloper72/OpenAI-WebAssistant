@@ -1,1 +1,1 @@
-web: gunicorn webassistant.wsgi
+web: gunicorn webassistant.wsgi:application
